@@ -105,3 +105,7 @@ button:hover{
 #p2:hover{
     cursor: pointer;
 }
+#error{
+    font-family: 'Inter', sans-serif;
+    color: rgb(201, 35, 35);
+}

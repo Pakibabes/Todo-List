@@ -34,9 +34,10 @@ body{
 }
 .enclose{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 164px;
+    margin-top: 30px;
 }
 .wrapper{
     display: flex;
@@ -50,63 +51,48 @@ body{
 h1{
     color: var(--primary);
     margin-top: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     font-size: 3rem;
-    font-family: 'Inter', sans-serif;
-}
-h3{
-    color: var(--white);
-    margin-bottom: 15px;
-    font-size: 20px;
     font-family: 'Inter', sans-serif;
 }
 form{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-top: 35px;
+    gap: 10px;
+}
+#todoInput{
+    color: var(--primary);
+    
 }
 .textBox{
-    color: black;
-    border: 2px solid grey;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    padding: 5px;
-    width: 200px;
-}
-.textBox:focus{
-    outline: none;
-}
-button{
+    padding-left: 10px;
     border: 2px solid var(--primary);
     background-color: var(--blacked);
     color: var(--primary);
     border-radius: 15px;
-    width: 193px;
-    height: 50px;
+    height: 40px;
+    width: 371px;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 10px;
 }
+.textBox:focus{
+    outline: none;
+}
+#btnAdd{
+    border: 2px solid var(--primary);
+    background-color: var(--blacked);
+    color: var(--primary);
+    border-radius: 15px;
+    height: 40px;
+    width: 60px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 button:hover{
     cursor: pointer;
     background-color: var(--hover-blacked);
-}
-.paragraph{
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-}
-#p1{
-    color: var(--white);
-}
-#p2{
-    color: var(--secondary)
-}
-#p2:hover{
-    cursor: pointer;
-}
-#error{
-    font-family: 'Inter', sans-serif;
-    color: rgb(201, 35, 35);
 }
