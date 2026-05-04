@@ -1,0 +1,107 @@
+:root{
+    --background: linear-gradient(to bottom,#333333,#415242,#507151,#597959,#678D55);
+    --primary: #00C26E;
+    --secondary: #008057;
+    --greyed: #D9D9D9;
+    --white: #ffff;
+    --placeHolder: #9A9A9A;
+    --blacked: rgba(0, 0, 0, 0.5);
+    --hover-blacked: rgba(0, 0, 0, 0.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background: var(--background);
+}
+
+#logo{
+    margin: 20px;
+    color: var(--primary);
+    border: 2px solid;
+    font-size: 21px;
+    margin-right: 0;
+    width: 36px;
+    height: 36px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    flex-shrink: 0;
+}
+.enclose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 164px;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blacked);
+    align-items: center;
+    width: 523px;
+    height: 453px;
+    border-radius: 15px;
+}
+h1{
+    color: var(--primary);
+    margin-top: 40px;
+    font-size: 3rem;
+    font-family: 'Inter', sans-serif;
+}
+h3{
+    color: var(--white);
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.textBox{
+    color: black;
+    border: 2px solid grey;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 5px;
+    width: 200px;
+}
+.textBox:focus{
+    outline: none;
+}
+button{
+    border: 2px solid var(--primary);
+    background-color: var(--blacked);
+    color: var(--primary);
+    border-radius: 15px;
+    width: 193px;
+    height: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--hover-blacked);
+}
+.paragraph{
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+#p1{
+    color: var(--white);
+}
+#p2{
+    color: var(--secondary)
+}
+#p2:hover{
+    cursor: pointer;
+}
