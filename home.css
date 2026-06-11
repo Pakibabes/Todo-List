@@ -1,98 +1,321 @@
 :root{
-    --background: linear-gradient(to bottom,#333333,#415242,#507151,#597959,#678D55);
+    --background: linear-gradient(135deg, #1f1f1f, #2d3f2e, #1f1f1f);
     --primary: #00C26E;
     --secondary: #008057;
     --greyed: #D9D9D9;
-    --white: #ffff;
-    --placeHolder: #9A9A9A;
-    --blacked: rgba(0, 0, 0, 0.5);
-    --hover-blacked: rgba(0, 0, 0, 0.1);
+    --white: #ffffff;
+    --placeHolder: #8a9a8f;
+    --blacked: rgba(0, 0, 0, 0.45);
+    --hover-blacked: rgba(255, 255, 255, 0.05);
 }
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     background: var(--background);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Header Bar */
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #logo{
-    margin: 20px;
     color: var(--primary);
     border: 2px solid;
     font-size: 21px;
-    margin-right: 0;
     width: 36px;
     height: 36px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     letter-spacing: 3px;
     flex-shrink: 0;
+    font-weight: bold;
 }
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-profile span {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.logoutBtn {
+    border: 1.5px solid var(--primary);
+    background-color: transparent;
+    color: var(--primary);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logoutBtn:hover {
+    background-color: var(--primary);
+    color: #121212;
+    box-shadow: 0 0 12px rgba(0, 194, 110, 0.4);
+}
+
 .enclose{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 40px;
 }
+
 .wrapper{
     display: flex;
     flex-direction: column;
-    background-color: var(--blacked);
+    background-color: rgba(20, 20, 20, 0.5);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     align-items: center;
-    width: 523px;
-    height: 453px;
-    border-radius: 15px;
+    width: 500px;
+    min-height: 450px;
+    max-height: 70vh;
+    overflow: auto;
+    height: auto;
+    border-radius: 20px;
+    padding: 25px 25px 30px 25px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
+
+.wrapper::-webkit-scrollbar{
+    background-color: transparent;
+    width: 6px;
+}
+.wrapper::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+}
+.wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 h1{
-    color: var(--primary);
-    margin-top: 40px;
-    margin-bottom: 30px;
-    font-size: 3rem;
-    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
+
 form{
     display: flex;
     align-items: center;
-    margin-top: 35px;
-    gap: 10px;
-}
-#todoInput{
-    color: var(--primary);
-    
-}
-.textBox{
-    padding-left: 10px;
-    border: 2px solid var(--primary);
-    background-color: var(--blacked);
-    color: var(--primary);
-    border-radius: 15px;
-    height: 40px;
-    width: 371px;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-}
-.textBox:focus{
-    outline: none;
-}
-#btnAdd{
-    border: 2px solid var(--primary);
-    background-color: var(--blacked);
-    color: var(--primary);
-    border-radius: 15px;
-    height: 40px;
-    width: 60px;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
-    font-weight: bold;
+    margin-bottom: 25px;
+    gap: 12px;
+    width: 100%;
+    justify-content: center;
 }
 
-button:hover{
+#todoInput{
+    color: var(--white);
+}
+
+.textBox{
+    padding-left: 15px;
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--white);
+    border-radius: 12px;
+    height: 44px;
+    width: 340px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.textBox::placeholder {
+    color: var(--placeHolder);
+}
+
+.textBox:focus{
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0, 194, 110, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#btnAdd{
+    border: none;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    border-radius: 12px;
+    height: 44px;
+    width: 70px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
-    background-color: var(--hover-blacked);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 194, 110, 0.2);
+}
+
+#btnAdd:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 194, 110, 0.35);
+}
+
+ul{
+    list-style-type: none;
+    width: 100%;
+}
+
+.todo{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.04);
+    margin-bottom: 12px;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    transition: all 0.25s ease;
+}
+
+.todo:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.todo .todo-text{
+    padding: 12px;
+    flex-grow: 1;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    word-break: break-word;
+}
+
+/* Edit input */
+.todo .edit-input {
+    display: none;
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1.5px solid var(--primary);
+    border-radius: 8px;
+    color: var(--white);
+    padding: 8px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    margin: 6px 12px;
+    outline: none;
+    width: 0; /* Let flex-grow handle width */
+}
+
+.todo.editing .edit-input {
+    display: block;
+}
+
+.todo.editing .todo-text {
+    display: none;
+}
+
+.deleteBtn{
+    padding: 8px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.deleteBtn:hover {
+    background-color: rgba(244, 67, 54, 0.1);
+}
+
+.deleteBtn:hover svg{
+    fill: #ff4d4d;
+}
+.deleteBtn svg{
+    fill: #a0a0a0;
+    transition: 200ms ease;
+}
+
+.editBtn{
+    padding: 8px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    margin-right: 4px;
+}
+
+.editBtn:hover {
+    background-color: rgba(0, 194, 110, 0.1);
+}
+
+.editBtn:hover svg{
+    fill: #00e682;
+}
+.editBtn svg{
+    fill: #a0a0a0;
+    transition: 200ms ease;
+}
+
+.custom-checkbox{
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.custom-checkbox:hover {
+    border-color: var(--primary);
+    background-color: rgba(0, 194, 110, 0.1);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: #121212;
+}
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color: #8a9a8f;
+    opacity: 0.6;
+}
+input[type=checkbox]{
+    display: none;
 }

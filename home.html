@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Reactive Todo List - Home</title>
     <link rel="stylesheet" href="home.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p id="logo">TL</p>
+    <header class="header-bar">
+        <p id="logo">TL</p>
+        <div class="user-profile">
+            <span id="welcomeMessage">Welcome, <strong id="username-span">User</strong>!</span>
+            <button id="btnLogout" class="logoutBtn">Logout</button>
+        </div>
+    </header>
+
     <div class="enclose">
-            <h1>Reactive TODO List</h1>
+        <h1>Reactive TODO List</h1>
         <div class="wrapper">
             <form>
-                <input id="todoInput" class="textBox" type="text">
+                <input id="todoInput" class="textBox" type="text" autocomplete="off" placeholder="What needs to be done?">
                 <button id="btnAdd">Add</button>
             </form>
-
+            <ul id="todo-ul">
+                <!-- Todos will be generated dynamically -->
+            </ul>
         </div>
     </div>
 
